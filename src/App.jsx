@@ -7,7 +7,6 @@ import {
 } from 'lucide-react';
 
 // --- MOCK DATA ---
-// Nota: I dati 'realName' sono presenti nel database simulato ma NON vengono mai mostrati nell'interfaccia operatore per garantire l'anonimato richiesto.
 const initialJobs = [
   { id: 1, title: "Addetto Magazzino", company: "Logistica Nord", location: "Milano", type: "Full-time", description: "Gestione carico/scarico e inventario con utilizzo transpallet elettrico." },
   { id: 2, title: "Giardiniere", company: "Verde Pubblico Srl", location: "Roma", type: "Part-time", description: "Manutenzione parchi e giardini, potatura siepi e rasatura prati." },
@@ -41,7 +40,7 @@ const Navbar = ({ onNavigate, currentPage }) => (
           <div className="bg-emerald-500 p-2 rounded-lg">
             <Shield className="h-6 w-6 text-slate-900" />
           </div>
-          <span className="font-bold text-xl tracking-wider">SECOND CHANCE</span>
+          <span className="font-bold text-xl tracking-wider">SECONDA CHANCE</span>
         </div>
         <div className="hidden md:flex items-center space-x-8">
           <button onClick={() => onNavigate('home')} className={`text-sm font-medium hover:text-emerald-400 transition ${currentPage === 'home' ? 'text-emerald-400' : 'text-slate-300'}`}>HOME</button>
@@ -101,87 +100,4 @@ const HomePage = ({ onNavigate }) => (
           </div>
           <div>
             <div className="text-3xl font-bold text-white mb-1">100%</div>
-            <div className="text-sm text-slate-500 font-medium uppercase tracking-wider">Anonimato Garantito</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-white mb-1">24h</div>
-            <div className="text-sm text-slate-500 font-medium uppercase tracking-wider">Supporto Operatori</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Features Section */}
-    <div className="py-32 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Come funziona la piattaforma</h2>
-          <p className="text-slate-600 text-lg">Un processo trasparente e sicuro progettato per tutelare i candidati e facilitare le aziende.</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Feature 1 */}
-          <div className="bg-white p-10 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-emerald-500/30 transition duration-300 group">
-            <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-500 transition duration-300">
-              <Shield className="w-8 h-8 text-blue-600 group-hover:text-white transition" />
-            </div>
-            <h3 className="text-xl font-bold mb-4 text-slate-900">1. Privacy Totale</h3>
-            <p className="text-slate-600 leading-relaxed">
-              L'identità dei candidati è protetta da ID numerici. Nessun dato sensibile viene condiviso nella prima fase di selezione.
-            </p>
-          </div>
-
-          {/* Feature 2 */}
-          <div className="bg-white p-10 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-emerald-500/30 transition duration-300 group">
-            <div className="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-emerald-500 transition duration-300">
-              <Users className="w-8 h-8 text-emerald-600 group-hover:text-white transition" />
-            </div>
-            <h3 className="text-xl font-bold mb-4 text-slate-900">2. Validazione Operatori</h3>
-            <p className="text-slate-600 leading-relaxed">
-              Ogni profilo viene verificato dai nostri operatori che agiscono come garanti delle competenze acquisite.
-            </p>
-          </div>
-
-          {/* Feature 3 */}
-          <div className="bg-white p-10 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-emerald-500/30 transition duration-300 group">
-            <div className="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-purple-500 transition duration-300">
-              <Briefcase className="w-8 h-8 text-purple-600 group-hover:text-white transition" />
-            </div>
-            <h3 className="text-xl font-bold mb-4 text-slate-900">3. Matching Etico</h3>
-            <p className="text-slate-600 leading-relaxed">
-              Colleghiamo i candidati solo con aziende che hanno aderito al nostro codice etico di responsabilità sociale.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-// 3. Jobs Page & Application
-const JobsPage = ({ jobs, onApply }) => {
-  const [selectedJob, setSelectedJob] = useState(null);
-  const [skillsText, setSkillsText] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onApply(selectedJob.id, skillsText);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setSelectedJob(null);
-      setSkillsText("");
-    }, 3000);
-  };
-
-  if (selectedJob) {
-    return (
-      <div className="min-h-screen bg-slate-50 py-12 px-4">
-        <div className="max-w-3xl mx-auto">
-          <button onClick={() => setSelectedJob(null)} className="mb-8 text-slate-500 hover:text-emerald-600 font-medium flex items-center transition">
-            <ChevronRight className="rotate-180 mr-1 w-5 h-5" /> Torna alla lista offerte
-          </button>
-          
-          {submitted ? (
-            <div className="bg-white border-2 border-emerald-100 p-12 rounded-3xl text-center shadow-xl shadow-emerald-1
+            <div className="text-sm text-slate-500 font-medium uppercase tracking-wider">Anonim
