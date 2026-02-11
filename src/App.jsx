@@ -8,9 +8,9 @@ import {
 
 // --- MOCK DATA ---
 const initialJobs = [
-  { id: 1, title: "Addetto Magazzino", company: "", location: "Milano", type: "Full-time", description: "Gestione carico/scarico e inventario con utilizzo transpallet elettrico." },
-  { id: 2, title: "Giardiniere", company: "", location: "Roma", type: "Part-time", description: "Manutenzione parchi e giardini, potatura siepi e rasatura prati." },
-  { id: 3, title: "Aiuto Cuoco", company: "", location: "Genova", type: "Turni", description: "Preparazione linea, pulizia verdure e supporto allo chef durante il servizio." },
+  { id: 1, title: "Addetto Magazzino", company: "AZ001", location: "Milano", type: "Full-time", description: "Gestione carico/scarico e inventario con utilizzo transpallet elettrico." },
+  { id: 2, title: "Giardiniere", company: "AZ002", location: "Roma", type: "Part-time", description: "Manutenzione parchi e giardini, potatura siepi e rasatura prati." },
+  { id: 3, title: "Aiuto Cuoco", company: "AZ003", location: "Genova", type: "Turni", description: "Preparazione linea, pulizia verdure e supporto allo chef durante il servizio." },
 ];
 
 const initialCompanies = [
