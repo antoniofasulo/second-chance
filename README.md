@@ -6,8 +6,8 @@ Il sistema agisce come un garante tra il candidato e l'azienda, proteggendo la p
 * Frontend: React.js con Vite
 * Styling: Tailwind CSS (Design System personalizzato)
 * Iconografia: Lucide React
-* Animazioni: Tailwind CSS Animate🏗️
-#### Architettura del Progetto
+* Animazioni: Tailwind CSS Animate
+#### 🏗️ Architettura del Progetto
 Il portale è diviso in tre aree logiche principali:
 * Area Pubblica: Dove i candidati possono consultare offerte di lavoro anonimizzate e inviare candidature protette.
 * Dashboard Operatore (Admin): La torre di controllo dove i mediatori gestiscono l'anagrafica reale, validano le competenze e filtrano i match tra domanda e offerta.
