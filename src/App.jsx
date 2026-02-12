@@ -3,19 +3,20 @@ import {
   Shield, Users, Briefcase, ChevronRight, Lock, 
   LayoutDashboard, Building2, User, FileText, 
   Plus, Edit, Trash2, Save, X, LogOut, CheckCircle,
-  MapPin, Phone, Mail, ArrowRight, Star, Menu
+  MapPin, Phone, Mail, ArrowRight, Star, Menu,
+  BookOpen, Search, Download, ExternalLink, HelpCircle
 } from 'lucide-react';
 
 // --- MOCK DATA ---
 const initialJobs = [
-  { id: 1, title: "Addetto Magazzino", company: "101", location: "Milano", type: "Full-time", description: "Gestione carico/scarico e inventario con utilizzo transpallet elettrico." },
-  { id: 2, title: "Giardiniere", company: "090", location: "Roma", type: "Part-time", description: "Manutenzione parchi e giardini, potatura siepi e rasatura prati." },
-  { id: 3, title: "Aiuto Cuoco", company: "107", location: "Genova", type: "Turni", description: "Preparazione linea, pulizia verdure e supporto allo chef durante il servizio." },
+  { id: 1, title: "Addetto Magazzino", company: "Logistica Nord", location: "Milano", type: "Full-time", description: "Gestione carico/scarico e inventario con utilizzo transpallet elettrico." },
+  { id: 2, title: "Giardiniere", company: "Verde Pubblico Srl", location: "Roma", type: "Part-time", description: "Manutenzione parchi e giardini, potatura siepi e rasatura prati." },
+  { id: 3, title: "Aiuto Cuoco", company: "Ristorante Il Porto", location: "Genova", type: "Turni", description: "Preparazione linea, pulizia verdure e supporto allo chef durante il servizio." },
 ];
 
 const initialCompanies = [
-  { id: 101, name: "Logistica Nord (id:101)", piva: "IT12345678901", address: "Via Roma 1, Milano", contact: "Mario Rossi", email: "hr@logisticanord.it", phone: "021234567" },
-  { id: 102, name: "Verde Pubblico Srl (id:090)", piva: "IT98765432109", address: "Via Appia 20, Roma", contact: "Giulia Bianchi", email: "info@verdepubblico.it", phone: "061234567" },
+  { id: 101, name: "Logistica Nord", piva: "IT12345678901", address: "Via Roma 1, Milano", contact: "Mario Rossi", email: "hr@logisticanord.it", phone: "021234567" },
+  { id: 102, name: "Verde Pubblico Srl", piva: "IT98765432109", address: "Via Appia 20, Roma", contact: "Giulia Bianchi", email: "info@verdepubblico.it", phone: "061234567" },
 ];
 
 const initialCandidates = [
@@ -29,6 +30,71 @@ const initialApplications = [
   { id: 2, jobId: 2, candidateId: "CAND-002", status: "In Valutazione", skillsHighlight: "Sono abituato al lavoro fisico all'aperto." },
 ];
 
+const resourcesData = [
+  {
+    title: "Contenuti Base",
+    icon: <FileText className="w-6 h-6" />,
+    description: "CV, lettera e profilo professionale.",
+    items: [
+      "Guide pratiche “come scrivere un CV” (sezioni obbligatorie)",
+      "Focus sul curriculum europeo/Europass: tutorial",
+      "Template scaricabili (Base, Junior, Senior)",
+      "Checklist errori da evitare nel CV",
+      "Guide alla lettera di presentazione",
+      "Ottimizzazione profilo LinkedIn (Headline, About)"
+    ]
+  },
+  {
+    title: "Ricerca Lavoro",
+    icon: <Search className="w-6 h-6" />,
+    description: "Strategie, canali e banche dati.",
+    items: [
+      "Piano giornaliero: organizzare la ricerca",
+      "Panoramica canali: Job board e Agenzie",
+      "Siti “Lavora con noi” e candidature spontanee",
+      "Le migliori banche dati per settore (Schede sintetiche)",
+      "Mini‑guide settoriali (IT, Sanità, Turismo)",
+      "Come leggere un bando di concorso"
+    ]
+  },
+  {
+    title: "Gazzetta Ufficiale & Concorsi",
+    icon: <BookOpen className="w-6 h-6" />,
+    description: "Guide ai bandi e preparazione.",
+    items: [
+      "Come consultare la Gazzetta Ufficiale online",
+      "Ricerca per data, numero e parole chiave",
+      "Mappa banche dati (INPA, ConcorsiPubblici, BUR)",
+      "Risorse per la preparazione: Quiz e Simulatori",
+      "Pianificare lo studio per i concorsi"
+    ]
+  },
+  {
+    title: "Colloqui & Soft Skills",
+    icon: <Users className="w-6 h-6" />,
+    description: "Preparazione e personal branding.",
+    items: [
+      "Guide al colloquio (Telefonico, Video, In presenza)",
+      "Domande tipiche e metodo STAR",
+      "Competenze trasversali: cosa sono e come descriverle",
+      "Personal Branding: posizionarsi e farsi notare",
+      "Networking offline e online"
+    ]
+  },
+  {
+    title: "Strumenti Pratici",
+    icon: <Download className="w-6 h-6" />,
+    description: "Modelli e checklist pronte all'uso.",
+    items: [
+      "Modelli scaricabili (Lettere, Email candidatura/follow-up)",
+      "File per tracciare le candidature",
+      "Checklist interattive: Prima del CV, Prima del colloquio",
+      "FAQ (Inattività, Lavoro estero, Smart working)",
+      "Glossario del recruiting (RAL, ATS, Hard Skills)"
+    ]
+  }
+];
+
 // --- COMPONENTS ---
 
 // 1. Navbar Pubblica
@@ -40,11 +106,12 @@ const Navbar = ({ onNavigate, currentPage }) => (
           <div className="bg-emerald-500 p-2 rounded-lg">
             <Shield className="h-6 w-6 text-slate-900" />
           </div>
-          <span className="font-bold text-xl tracking-wider">SECONDA CHANCE</span>
+          <span className="font-bold text-xl tracking-wider">SECOND CHANCE</span>
         </div>
         <div className="hidden md:flex items-center space-x-8">
           <button onClick={() => onNavigate('home')} className={`text-sm font-medium hover:text-emerald-400 transition ${currentPage === 'home' ? 'text-emerald-400' : 'text-slate-300'}`}>HOME</button>
           <button onClick={() => onNavigate('jobs')} className={`text-sm font-medium hover:text-emerald-400 transition ${currentPage === 'jobs' ? 'text-emerald-400' : 'text-slate-300'}`}>OFFERTE DI LAVORO</button>
+          <button onClick={() => onNavigate('resources')} className={`text-sm font-medium hover:text-emerald-400 transition ${currentPage === 'resources' ? 'text-emerald-400' : 'text-slate-300'}`}>RISORSE</button>
           <div className="h-6 w-px bg-slate-700 mx-4"></div>
           <button onClick={() => onNavigate('login')} className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-full font-bold text-sm transition shadow-lg hover:shadow-emerald-500/20 flex items-center">
             <Lock className="w-4 h-4 mr-2" /> AREA OPERATORE
@@ -80,8 +147,8 @@ const HomePage = ({ onNavigate }) => (
             <button onClick={() => onNavigate('jobs')} className="bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold py-4 px-8 rounded-xl shadow-xl shadow-emerald-500/20 transition transform hover:-translate-y-1 flex items-center justify-center">
               Trova Lavoro Ora <ArrowRight className="ml-2 w-5 h-5" />
             </button>
-            <button className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl border border-slate-700 transition flex items-center justify-center">
-              Scopri come funziona
+            <button onClick={() => onNavigate('resources')} className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl border border-slate-700 transition flex items-center justify-center">
+              Risorse e Guide
             </button>
           </div>
         </div>
@@ -157,7 +224,51 @@ const HomePage = ({ onNavigate }) => (
   </div>
 );
 
-// 3. Jobs Page & Application
+// 3. Resources Page
+const ResourcesPage = () => (
+  <div className="min-h-screen bg-slate-50 py-12 px-4">
+    <div className="max-w-7xl mx-auto">
+      {/* Header */}
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6">Centro Risorse e Guide</h2>
+        <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+          Strumenti pratici, guide e modelli scaricabili per supportarti in ogni fase della ricerca attiva del lavoro.
+        </p>
+      </div>
+
+      {/* Resources Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {resourcesData.map((section, idx) => (
+          <div key={idx} className="bg-white rounded-3xl shadow-sm hover:shadow-xl hover:shadow-emerald-500/10 transition duration-300 border border-slate-100 p-8 flex flex-col h-full group">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mr-4 group-hover:bg-emerald-100 transition">
+                <div className="text-emerald-600">
+                  {section.icon}
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900">{section.title}</h3>
+            </div>
+            
+            <p className="text-slate-500 text-sm mb-6 pb-6 border-b border-slate-50">
+              {section.description}
+            </p>
+
+            <ul className="space-y-4 flex-1">
+              {section.items.map((item, i) => (
+                <li key={i} className="flex items-start text-sm group/link cursor-pointer">
+                  <ExternalLink className="w-4 h-4 text-emerald-400 mt-0.5 mr-2 flex-shrink-0 group-hover/link:text-emerald-600 transition" />
+                  <span className="text-slate-700 font-medium group-hover/link:text-emerald-700 group-hover/link:underline transition">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+// 4. Jobs Page & Application
 const JobsPage = ({ jobs, onApply }) => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [skillsText, setSkillsText] = useState("");
@@ -298,7 +409,7 @@ const JobsPage = ({ jobs, onApply }) => {
   );
 };
 
-// 4. Operator Login
+// 5. Operator Login
 const OperatorLogin = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -367,7 +478,7 @@ const OperatorLogin = ({ onLogin }) => {
   );
 };
 
-// 5. Operator Layout
+// 6. Operator Layout
 const OperatorLayout = ({ children, activeTab, onTabChange, onLogout }) => (
   <div className="flex h-screen bg-slate-100">
     {/* Sidebar */}
@@ -890,7 +1001,7 @@ const CandidatesSection = ({ candidates, setCandidates }) => {
 // --- APP ROOT ---
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home'); // home, jobs, login, operator
+  const [currentPage, setCurrentPage] = useState('home'); // home, jobs, resources, login, operator
   const [operatorTab, setOperatorTab] = useState('dashboard'); // dashboard, companies, candidates
   const [isOperatorLoggedIn, setIsOperatorLoggedIn] = useState(false);
 
@@ -941,6 +1052,10 @@ export default function App() {
       
       {currentPage === 'jobs' && (
         <JobsPage jobs={jobs} onApply={handleJobApply} />
+      )}
+
+      {currentPage === 'resources' && (
+        <ResourcesPage />
       )}
 
       {currentPage === 'login' && (
