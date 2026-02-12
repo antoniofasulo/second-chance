@@ -1,5 +1,5 @@
 # Seconda Chance
-## Portale Seconad Chance - Sistema di Reintegro Lavorativo
+## Portale Seconda Chance - Sistema di Reintegro Lavorativo
 Il progetto Second Chance è una piattaforma di intermediazione etica progettata per favorire l'inserimento lavorativo degli ex detenuti. \
 Il sistema agisce come un garante tra il candidato e l'azienda, proteggendo la privacy del beneficiario e validando le sue competenze tramite mediatori esperti.
 #### 🚀 Tecnologie Utilizzate
