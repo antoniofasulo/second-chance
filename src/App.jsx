@@ -9,13 +9,13 @@ import {
 
 // --- MOCK DATA ---
 const initialJobs = [
-  { id: 1, title: "Addetto Magazzino", company: "AZ101", location: "Milano", type: "Full-time", description: "Gestione carico/scarico e inventario con utilizzo transpallet elettrico." },
+  { id: 1, title: "Addetto Magazzino", company: "AZ0101", location: "Milano", type: "Full-time", description: "Gestione carico/scarico e inventario con utilizzo transpallet elettrico." },
   { id: 2, title: "Giardiniere", company: "AZ0209", location: "Roma", type: "Part-time", description: "Manutenzione parchi e giardini, potatura siepi e rasatura prati." },
   { id: 3, title: "Aiuto Cuoco", company: "AZ0087", location: "Genova", type: "Turni", description: "Preparazione linea, pulizia verdure e supporto allo chef durante il servizio." },
 ];
 
 const initialCompanies = [
-  { id: 101, name: "Logistica Nord - AZ101", piva: "IT12345678901", address: "Via Roma 1, Milano", contact: "Mario Rossi", email: "hr@logisticanord.it", phone: "021234567" },
+  { id: 101, name: "Logistica Nord - AZ0101", piva: "IT12345678901", address: "Via Roma 1, Milano", contact: "Mario Rossi", email: "hr@logisticanord.it", phone: "021234567" },
   { id: 102, name: "Verde Pubblico Srl - AZ0209", piva: "IT98765432109", address: "Via Appia 20, Roma", contact: "Giulia Bianchi", email: "info@verdepubblico.it", phone: "061234567" },
 ];
 
