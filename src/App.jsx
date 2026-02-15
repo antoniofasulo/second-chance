@@ -140,7 +140,7 @@ const HomePage = ({ onNavigate }) => (
             </span>
           </h1>
           <p className="text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl">
-            Connettiamo competenze e aziende attraverso un processo sicuro e anonimo. 
+            Connettiamo competenze e aziende attraverso un percorso sicuro e anonimo. 
             Il passato non definisce il futuro professionale.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -507,7 +507,7 @@ const OperatorLayout = ({ children, activeTab, onTabChange, onLogout }) => (
           onClick={() => onTabChange('candidates')}
           className={`w-full flex items-center px-4 py-4 rounded-xl transition font-medium ${activeTab === 'candidates' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-900/50' : 'hover:bg-slate-800 hover:text-white'}`}
         >
-          <User className="w-5 h-5 mr-3" /> Ex Detenuti
+          <User className="w-5 h-5 mr-3" /> Beneficiari
         </button>
       </nav>
       <div className="p-6 border-t border-slate-800 bg-slate-900">
@@ -570,7 +570,7 @@ const OperatorDashboard = ({ applications, jobs, candidates }) => (
           <User className="w-6 h-6 text-purple-600" />
         </div>
         <div>
-          <div className="text-slate-500 text-sm font-medium">Ex Detenuti Registrati</div>
+          <div className="text-slate-500 text-sm font-medium">Beneficiari Registrati</div>
           <div className="text-3xl font-black text-slate-900">{candidates.length}</div>
         </div>
       </div>
@@ -854,7 +854,7 @@ const CandidatesSection = ({ candidates, setCandidates }) => {
     <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-8">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900">Elenco Ex Detenuti</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Elenco Beneficiari</h2>
           <div className="flex items-center mt-2 text-slate-500 text-sm">
              <Shield className="w-4 h-4 mr-1 text-emerald-500"/>
              <span>Visualizzazione Anonima (Solo ID)</span>
