@@ -106,7 +106,7 @@ const Navbar = ({ onNavigate, currentPage }) => (
           <div className="bg-emerald-500 p-2 rounded-lg">
             <Shield className="h-6 w-6 text-slate-900" />
           </div>
-          <span className="font-bold text-xl tracking-wider">SECONDA CHANCE</span>
+          <span className="font-bold text-xl tracking-wider">RESTART</span>
         </div>
         <div className="hidden md:flex items-center space-x-8">
           <button onClick={() => onNavigate('home')} className={`text-sm font-medium hover:text-emerald-400 transition ${currentPage === 'home' ? 'text-emerald-400' : 'text-slate-300'}`}>HOME</button>
